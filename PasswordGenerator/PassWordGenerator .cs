@@ -12,7 +12,7 @@ namespace PasswordGenerator
         const string UpperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         const string LowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
 
-        public string PasswordGenerator()
+        public virtual string PasswordGenerator()
         {
            var allowed = Numbers + SpecialCharacters + UpperCaseLetters + LowerCaseLetters;
 
@@ -24,7 +24,7 @@ namespace PasswordGenerator
 
             return Password;
         }
-        public bool IsPasswordValid(string passwordToCheck)
+        public virtual bool IsPasswordValid(string passwordToCheck)
         {
             if (string.IsNullOrEmpty(passwordToCheck) || passwordToCheck.Length < 8)
                 return false;
